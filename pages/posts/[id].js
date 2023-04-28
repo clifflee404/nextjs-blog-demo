@@ -1,7 +1,8 @@
 import Layout from "../../components/layout"
 import { getAllPostIds, getPostData } from "../../lib/posts"
-import Head from 'next/head'
-import Date from '../../components/date'
+import Head from "next/head"
+import Date from "../../components/date"
+import utilStyles from "../../styles/utils.module.css"
 
 export async function getStaticPaths() {
   // Return a list of possible value for id
@@ -28,15 +29,20 @@ export default function Post({ postData }) {
       <Head>
         <title>{postData.title}</title>
       </Head>
-      title: {postData.title}
+      {/* title: {postData.title}
       <br />
       id: {postData.id}
       <br />
       date: <Date dateString={postData.date}/>
-      <hr/>
+      <hr/> */}
 
-      <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+      <article>
+        <h1 className={utilStyles.headingXl}>{postData.title}</h1>
+        <div className={utilStyles}>
+          <Date dateString={postData.date} />
+        </div>
+        <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+      </article>
     </Layout>
   )
 }
-
