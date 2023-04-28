@@ -26,7 +26,7 @@ export default function Home({ allPostsData }) {
       </Head>
 
       <section className={utilStyles.headingMd}>
-        <p>做有价值的,自己有兴趣的事情</p>
+        <p>Build something usefule, valuable, and interesting</p>
         <p>
           (This is a sample website - you'll be building a site like this on{" "}
           <a href="https://nextjs.org/learn">our Next.js tutorial.</a>)
