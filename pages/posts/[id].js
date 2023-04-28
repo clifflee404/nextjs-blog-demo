@@ -1,6 +1,7 @@
 import Layout from "../../components/layout"
 import { getAllPostIds, getPostData } from "../../lib/posts"
 import Head from 'next/head'
+import Date from '../../components/date'
 
 export async function getStaticPaths() {
   // Return a list of possible value for id
@@ -31,7 +32,7 @@ export default function Post({ postData }) {
       <br />
       id: {postData.id}
       <br />
-      date: {postData.date}
+      date: <Date dateString={postData.date}/>
       <hr/>
 
       <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
